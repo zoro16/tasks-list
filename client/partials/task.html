@@ -1,0 +1,32 @@
+<div class="container" ng-controller="TaskCtrl">
+    <div class="row col-md-12">
+        <div>
+            <input type="text" class="form-control input-lg" placeholder="Title"
+                   ng-keypress="save($event)" ng-model="nameInput">
+            <textarea type="text" class="form-control input-lg" placeholder="Description"
+                   ng-keypress="save($event)" ng-model="descriptionInput"></textarea>
+        </div>
+    </div>
+    <div class="row col-md-12 tasks">
+        <div ng-repeat="task in tasks" class="task col-md-12 col-sm-12 col-xs-12" >
+            <div class="col-md-8 col-sm-8 col-xs-8">
+                <span ng-show="!isEditable[$index]">{{task.name}}</span>
+                <span ng-show="!isEditable[$index]">{{task.description}}</span>
+                <span ng-show="!isEditable[$index]">{{task.dateCreated | date:'dd.MM.yyyy HH:mm:ss' }}</span>
+                <span ng-show="!isEditable[$index]">{{task.dateUpdated | date:'dd.MM.yyyy HH:mm:ss'}}</span>
+                <input ng-show="isEditable[$index]" type="text" id="name" onChange value="{{task.name}}"
+                       ng-keypress="edit($event, $index)" />
+                <input ng-show="isEditable[$index]"  id="description" onChange value="{{task.description}}"
+                          ng-keypress="edit($event, $index)" />
+                <input ng-show="isEditable[$index]" type="button" class="btn btn-primary"
+                       value="Cancel" ng-click="isEditable[$index] = false" />
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-3">
+                <input type="button" class="btn btn-default" class="pull-right"
+                       value="Edit" ng-click="isEditable[$index] = true" />
+                <input type="button" class="btn btn-danger" class="pull-right"
+                       value="Delete" ng-click="delete($index)" />
+            </div>
+        </div>
+    </div>
+</div>

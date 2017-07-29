@@ -1,0 +1,25 @@
+* {
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+    font-family: calibri;
+}
+.strike span {
+    text-decoration: line-through;
+    color: #ccc;
+}
+.tasks {
+    padding: 20px;
+}
+.task {
+    padding: 10px;
+    font-size: 21px;
+    border-bottom: 1px solid;
+}
+.task .btn {
+    margin-left: 5px;
+    width: 72px;
+}
+.task:hover {
+    background: #e7e7e7;
+}
