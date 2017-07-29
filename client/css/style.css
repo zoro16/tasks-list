@@ -8,8 +8,12 @@
     text-decoration: line-through;
     color: #ccc;
 }
+th {
+    font-size: 24px;
+    font-weight: 400;
+}
 .tasks {
-    padding: 20px;
+    padding-top: 70px;
 }
 .task {
     padding: 10px;
